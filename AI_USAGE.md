@@ -1,5 +1,9 @@
 # AI Usage Log — Part A Implementation
 
+## Overview of Tools & High-Level Strategy
+- **ChatGPT**: I explained my complete conceptual approach to GPT and had it formulate two highly structured prompts: the first for rigorous experimentation (uncovering flaws, hardware constraints, and root-cause reasoning), and the second for implementing the final fixes.
+- **Claude**: I used Claude to generate the initial implementation plan and structure the overall architectural approach before executing the code.
+
 ## 1. What the Agent Generated
 - **Corpus Fetching & Extraction**: Automating the resolution of canonical FLORES-200 download endpoints and extracting the 5-language `devtest` splits (`eng.txt`, `hin.txt`, `kan.txt`, `tam.txt`, `tel.txt`).
 - **Scripts**:
