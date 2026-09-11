@@ -4,17 +4,11 @@
 - **ChatGPT**: I explained my complete conceptual approach to GPT and had it formulate two highly structured prompts: the first for rigorous experimentation (uncovering flaws, hardware constraints, and root-cause reasoning), and the second for implementing the final fixes.
 - **Claude**: I used Claude to generate the initial implementation plan and structure the overall architectural approach before executing the code.
 
-## 1. What the Agent Generated
-- **Corpus Fetching & Extraction**: Automating the resolution of canonical FLORES-200 download endpoints and extracting the 5-language `devtest` splits (`eng.txt`, `hin.txt`, `kan.txt`, `tam.txt`, `tel.txt`).
-- **Scripts**:
-  - `partA/scripts/run_audit_flaws.py`: Automated framework to isolate and compute empirical deltas for all 6 known baseline claims.
-  - `partA/scripts/fertility_v2.py`: Corrected, production-ready benchmarking pipeline supporting arbitrary tokenizers, Unicode grapheme clusters, UTF-8 bytes, whitespace words, and parallel sentence denominators.
-- **Reports & Artifacts**:
-  - `partA/corpus/README.md`: Complete metadata, licensing, domain provenance, and critical evaluation of corpus limitations.
-  - `partA/results/audit_evidence.md` and `.csv`: Tabulated isolation methods, exact commands, before/after values, and verdicts.
-  - `partA/results/corrected_analysis.md` and `.csv`: Full evaluation matrix across 3 tokenizers and 5 languages, along with the technical justification for intent-based routing metrics.
-  - `partA/memo.md`: 1-page executive recommendation memo for leadership.
-  - `NOTEBOOK.md`: Chronological experimental log following `HYPOTHESIS → EXPERIMENT → RESULT → REVISION`.
+## 1. Initial Prompting & What the Agent Generated
+Instead of writing code immediately, the initial stages were heavily focused on planning and constraint mapping:
+- **Implementation Planning**: I prompted the agent to generate a strict implementation plan before any code was written. This ensured we adhered to the assignment constraints (like not modifying the starter kit).
+- **Finding Flaws & Constraints**: I asked the agent to deeply audit the baseline `fertility.py` script and the `bench_log.csv` data to identify mathematical and structural flaws, hardware constraints, and logic errors.
+- **Code & Artifact Generation**: Only after the planning and flaw-finding phases were complete did the agent generate the final Python scripts (`fertility_v2.py`, `run_audit_flaws.py`) and the corresponding Markdown reports/CSV tables mapping out the exact empirical differences.
 
 ## 2. What Was Verified Independently
 - **Baseline Reproduction**: Independently verified that `starter_kit/fertility.py` on the sample corpus yields unrounded fertility division of `5.889x` (1.27 vs 7.45 tok/word).
